@@ -1,7 +1,7 @@
-//SPDX-License-Identifier: GPL-3.0
+/*//SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 
-contract SimplePaymentChannel{
+contract PaymentChannel{
     address payable public sender;
     address payable public recipient;
     uint256 public expiration;
@@ -20,7 +20,7 @@ contract SimplePaymentChannel{
         selfdestruct(sender);
     }
 
-   function extend(uint256 newExpiration) public{
+   function extend(uint256 newExpiration) public view{
        require(msg.sender == recipient);
        require(newExpiration > expiration);
    }
@@ -62,4 +62,4 @@ contract SimplePaymentChannel{
     function prefixed(bytes32 hash) internal pure returns(bytes32){
         return keccak256(abi.encodePacked("\x19Ethereum signed Message:\n32", hash));
     }
-}
+}*/
