@@ -1,4 +1,4 @@
-/*//SPDX-License-Identifier: GPL-3.0
+//SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.4;
 
 contract PaymentChannel{
@@ -62,4 +62,4 @@ contract PaymentChannel{
     function prefixed(bytes32 hash) internal pure returns(bytes32){
         return keccak256(abi.encodePacked("\x19Ethereum signed Message:\n32", hash));
     }
-}*/
+}
